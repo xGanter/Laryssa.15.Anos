@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laryssa XV • Night Race</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff3ea5;--blue:#00d4ff;--bg:#040816;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;background:var(--bg);color:#fff;overflow-x:hidden}
+.hero{
+min-height:100vh;
+background:
+linear-gradient(90deg,rgba(4,8,22,.92),rgba(4,8,22,.45)),
+url('r34.jpg') center/cover no-repeat;
+display:flex;align-items:center;
+position:relative;
+}
+.hero:before,.hero:after{
+content:"";position:absolute;border-radius:50%;filter:blur(80px);
+}
+.hero:before{width:300px;height:300px;background:#00d4ff33;right:10%;top:15%}
+.hero:after{width:250px;height:250px;background:#ff3ea533;left:5%;bottom:10%}
+.container{width:min(1200px,92%);margin:auto;position:relative;z-index:2}
+.logo{letter-spacing:4px;color:#ddd}
+.name{font-size:clamp(4rem,10vw,8rem);font-family:"Cormorant Garamond",serif;color:var(--pink);text-shadow:0 0 20px var(--pink)}
+.xv{font-size:clamp(2rem,5vw,4rem);font-weight:700}
+.text{max-width:520px;line-height:1.8;margin-top:20px}
+.btn{display:inline-block;margin-top:25px;padding:18px 34px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--pink),var(--blue));box-shadow:0 0 25px #00d4ff55}
+.section{padding:80px 0}
+.title{text-align:center;font-size:2.5rem;font-family:"Cormorant Garamond",serif;margin-bottom:30px}
+.grid4,.grid2,.gallery{width:min(1100px,92%);margin:auto;display:grid;gap:18px}
+.grid4{grid-template-columns:repeat(4,1fr)}
+.grid2{grid-template-columns:1fr 1fr}
+.gallery{grid-template-columns:repeat(3,1fr)}
+.card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);padding:25px;border-radius:24px;border:1px solid rgba(255,255,255,.12);text-align:center}
+.counter{font-size:3rem;color:var(--blue);font-weight:700}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:18px}
+.music{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border:none;border-radius:50%;background:#111;color:#fff;z-index:999}
+.footer{text-align:center;padding:100px 20px}
+.copy{cursor:pointer}
+@media(max-width:900px){
+.grid4,.gallery,.grid2{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+.grid4,.gallery,.grid2{grid-template-columns:1fr}
+.hero{text-align:center}
+.text{margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+<div class="logo">LARYSSA • XV ANOS</div>
+<div class="name">Laryssa</div>
+<div class="xv">NIGHT RACE</div>
+<div class="text">
+Uma noite inspirada pela velocidade, emoção e pelas pessoas que tornam cada momento inesquecível.
+</div>
+<a href="#contagem" class="btn" onclick="playMusic()">🏁 INICIAR CORRIDA</a>
+</div>
+</section>
+
+<section class="section" id="contagem">
+<h2 class="title">CONTAGEM REGRESSIVA</h2>
+<div class="grid4">
+<div class="card"><div id="d" class="counter">00</div>Dias</div>
+<div class="card"><div id="h" class="counter">00</div>Horas</div>
+<div class="card"><div id="m" class="counter">00</div>Minutos</div>
+<div class="card"><div id="s" class="counter">00</div>Segundos</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">INFORMAÇÕES DA FESTA</h2>
+<div class="grid4">
+<div class="card">📅<br><br>18/07/2026</div>
+<div class="card">🕒<br><br>20h00</div>
+<div class="card">📍<br><br>LOCAL A DEFINIR</div>
+<div class="card">🗺️<br><br>LOCALIZAÇÃO</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">GALERIA</h2>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+</section>
+
+<section class="section">
+<div class="grid2">
+<div class="card">
+<h2>🎁 PRESENTES</h2><br>
+<p>Sua presença será meu maior presente.</p><br>
+<div id="pix" class="copy">PIX: 11999999999</div>
+<button class="btn" onclick="copiarPix()">Copiar PIX</button>
+</div>
+<div class="card">
+<h2>📱 CONFIRMAR PRESENÇA</h2><br>
+<p>Clique abaixo para confirmar.</p><br>
+<a class="btn" href="https://wa.me/5511999999999?text=Confirmo%20minha%20presen%C3%A7a">CONFIRMAR AGORA</a>
+</div>
+</div>
+</section>
+
+<section class="footer">
+<h2 class="title">CHEGADA</h2>
+<p style="max-width:700px;margin:auto;line-height:2">
+Não importa a velocidade. Não importa o destino. O que realmente importa são as pessoas que compartilham a viagem conosco.
+</p>
+<div class="name" style="font-size:4rem;margin-top:20px">Laryssa</div>
+</section>
+
+<!-- COLOQUE musica.mp3 NA MESMA PASTA -->
+<audio id="music" loop>
+<source src="musica.mp3" type="audio/mp3">
+</audio>
+
+<button class="music" onclick="toggleMusic()">🎵</button>
+
+<script>
+const music=document.getElementById('music');
+function playMusic(){music.play().catch(()=>{});}
+function toggleMusic(){music.paused?music.play():music.pause();}
+
+function copiarPix(){
+navigator.clipboard.writeText('11999999999');
+alert('PIX copiado!');
+}
+
+const eventDate=new Date('2026-07-18T20:00:00').getTime();
+setInterval(()=>{
+let x=eventDate-Date.now();
+document.getElementById('d').innerText=Math.max(0,Math.floor(x/86400000));
+document.getElementById('h').innerText=Math.max(0,Math.floor((x%86400000)/3600000));
+document.getElementById('m').innerText=Math.max(0,Math.floor((x%3600000)/60000));
+document.getElementById('s').innerText=Math.max(0,Math.floor((x%60000)/1000));
+},1000);
+</script>
+
+</body>
+</html>
